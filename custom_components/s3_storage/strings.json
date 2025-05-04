@@ -1,0 +1,61 @@
+{
+  "config": {
+    "error": {
+      "invalid_auth": "[%key:common::config_flow::error::invalid_auth%]",
+      "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
+      "unknown": "[%key:common::config_flow::error::unknown%]",
+      "invalid_config": "Invalid configuration"
+    },
+    "step": {
+      "user": {
+        "data": {
+          "access_key_id": "Access Key ID",
+          "secret_access_key": "Secret Access Key",
+          "bucket_name": "Bucket name",
+          "endpoint_url": "Endpoint URL"
+        },
+        "data_description": {
+          "access_key_id": "Access key ID for S3 authentication",
+          "secret_access_key": "Secret access key for S3 authentication",
+          "bucket_name": "Name of the S3 bucket to be used (will be created if it does not exist)",
+          "endpoint_url": "Custom endpoint URL for S3-compatible services (leave empty for AWS S3)"
+        },
+        "description": "Set up an S3-compatible storage service to be used for backups.",
+        "title": "Add S3 Storage"
+      },
+      "reauth_confirm": {
+        "data": {
+          "access_key_id": "[%key:component::s3_storage::config::step::user::data::access_key_id%]",
+          "secret_access_key": "[%key:component::s3_storage::config::step::user::data::secret_access_key%]"
+        },
+        "data_description": {
+          "access_key_id": "[%key:component::s3_storage::config::step::user::data_description::access_key_id%]",
+          "secret_access_key": "[%key:component::s3_storage::config::step::user::data_description::secret_access_key%]"
+        },
+        "description": "Provide new credentials for your S3 storage.",
+        "title": "Reauthenticate S3 Storage"
+      }
+    },
+    "abort": {
+      "already_configured": "[%key:common::config_flow::abort::already_configured_account%]",
+      "reauth_successful": "[%key:common::config_flow::abort::reauth_successful%]"
+    }
+  },
+  "issues": {
+    "bucket_not_found": {
+      "title": "Storage bucket not found",
+      "description": "The S3 bucket {bucket_name} has not been found. Please create it manually or enable automatic bucket creation, then fix this issue."
+    }
+  },
+  "exceptions": {
+    "bucket_not_found": {
+      "message": "S3 bucket {bucket_name} not found"
+    },
+    "cannot_connect": {
+      "message": "Cannot connect to S3 service at {endpoint_url}"
+    },
+    "invalid_auth": {
+      "message": "Authentication failed for access key {access_key_id}"
+    }
+  }
+}

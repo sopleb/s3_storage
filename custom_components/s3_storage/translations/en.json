@@ -1,0 +1,58 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Account is already configured",
+            "reauth_successful": "Re-authentication was successful"
+        },
+        "error": {
+            "cannot_connect": "Failed to connect",
+            "invalid_auth": "Invalid authentication",
+            "invalid_config": "Invalid configuration settings",
+            "unknown": "Unexpected error"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "access_key_id": "Access Key ID",
+                    "secret_access_key": "Secret Access Key",
+                    "bucket_name": "Bucket Name",
+                    "endpoint_url": "Endpoint URL",
+                },
+                "data_description": {
+                    "access_key_id": "Your S3 access key ID for authentication",
+                    "secret_access_key": "Your S3 secret access key for authentication",
+                    "bucket_name": "Name of the S3 bucket for storing backups",
+                    "endpoint_url": "Custom endpoint URL for S3-compatible services (e.g., https://s3.wasabisys.com)",
+                },
+                "description": "Configure an S3-compatible storage service for backups. Works with AWS S3, Wasabi, MinIO, and other S3-compatible services.",
+                "title": "S3 Storage Setup"
+            },
+            "reauth_confirm": {
+                "data": {
+                    "access_key_id": "Access Key ID",
+                    "secret_access_key": "Secret Access Key"
+                },
+                "data_description": {
+                    "access_key_id": "Enter your new S3 access key ID",
+                    "secret_access_key": "Enter your new S3 secret access key"
+                },
+                "description": "Please update your S3 storage credentials",
+                "title": "Update S3 Storage Credentials"
+            }
+        }
+    },
+    "issues": {
+        "bucket_not_found": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "The bucket {bucket_name} was not found in your S3 storage. Would you like Home Assistant to create it?",
+                        "title": "Create Missing Bucket"
+                    }
+                }
+            },
+            "title": "S3 Bucket Not Found"
+        }
+    },
+    "title": "S3 Storage"
+}

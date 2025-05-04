@@ -1,0 +1,12 @@
+{
+  "domain": "s3_storage",
+  "name": "S3 Storage",
+  "codeowners": ["@sopleb"],
+  "config_flow": true,
+  "documentation": "https://github.com/sopleb/s3_storage",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "loggers": ["boto3"],
+  "quality_scale": "platinum",
+  "requirements": ["boto3==1.38.8", "aioboto3==14.1.0"]
+}
