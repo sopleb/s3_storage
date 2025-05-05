@@ -1,3 +1,4 @@
 {
-  "name": "S3 Storage/backup"
+  "name": "S3 Storage/backup",
+  "homeassistant": "0.109.0"
 }
