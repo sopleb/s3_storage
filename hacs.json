@@ -1,0 +1,8 @@
+{
+  "name": "S3 Storage/backup",
+  "country": "US",
+  "homeassistant": "2025.04.1",
+  "iot_class": "Cloud",
+  "zip_release": true,
+  "filename": "s3_storage.zip"
+}
