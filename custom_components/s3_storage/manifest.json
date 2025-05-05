@@ -4,6 +4,7 @@
   "codeowners": ["@sopleb"],
   "config_flow": true,
   "documentation": "https://github.com/sopleb/s3_storage",
+  "issue_tracker": "https://github.com/sopleb/s3_storage/issues",
   "integration_type": "service",
   "iot_class": "cloud_polling",
   "loggers": ["boto3"],
